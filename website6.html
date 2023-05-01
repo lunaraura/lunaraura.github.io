@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Global styles */
+      body {
+        background-color: #373737;
+        overflow-x: hidden;
+        font-size: larger;
+      }
+
+      /* Header */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: -10px;
+        left: -5%;
+        width: 110%;
+        height: 75px;
+        padding: 10px 5%;
+        background-color: #fff;
+        overflow: hidden;
+      }
+
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        text-align: center;
+      }
+
+      .navlist {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        height: 130%;
+        width: 50%;
+        margin-right: 10%;
+        overflow: hidden;
+      }
+
+      .navlink {
+        padding: 10px 20px;
+        margin-right: 40px;
+        color: #333;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Body */
+      .body {
+        position: relative;
+        left: -10px;
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+        overflow: hidden;
+      }
+
+      /* Content 1 */
+      .content1 {
+        width: 110%;
+        height: 800px;
+        margin: 20px -10px;
+        text-align: center;
+        background-image: url("image (3).webp");
+        background-position-y: -100px;
+      }
+
+      .slanted-section {
+        position: relative;
+        float: right;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 8;
+        right: 0px;
+      }
+
+      .slanted-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ffffff;
+        transform-origin: bottom left;
+        transform: skewX(-15deg);
+        z-index: 9;
+        overflow: hidden;
+      }
+
+      .slanted-section-content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-right: 20%;
+        z-index: 10;
+        height: 200px;
+        text-align: center;
+      }
+
+      /* Content 2 */
+      .content2 {
+        width: 90%;
+        margin: 50px auto;
+        text-align: center;
+        background-color: #fff;
+        overflow: hidden;
+      }
+
+      .content2content {
+        margin: 150px 15% 100px 15%;
+      }
+
+      .content2bar {
+        width: 100%;
+        height: 350px;
+        background-color: #04070d;
+        overflow:hidden;
+      }
+
+      .barcontent {
+        display: flex;
+        justify-content: space-between;
+        overflow:hidden;
+      }
+
+      .barcontent img {
+        width: 300px;
+        float: left;
+        color: #fff;
+        text-align: center;
+        filter: invert(100);
+      }
+
+      .barcontent h1,
+      .barcontent h2,
+      .barcontent h3,
+      .barcontent p {
+        color: #fff;
+        text-align: center;
+      }
+
+      .barcolumn {
+        flex: 1;
+        margin: 10px;
+      }
+      .content2bottom {
+        position: relative;
+        top: 10px;
+        margin: 50px 0 100px 0;
+        padding: 20px;
+      }
+      /* Content 3 */
+      .content3 {
+        background-image: linear-gradient(#373737, #fff);
+        width: 90%;
+        height: 800px;
+        margin: 200px auto;
+        text-align: center;
+      }
+      .content3start {
+        background-color: #fff;
+        padding: 30px;
+      }
+      .content3columns {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+        height: 90%;
+      }
+      .content3column {
+        flex: 1;
+        background-color: #fff;
+        margin: 10px;
+        padding: 20px;
+      }
+      .content3column img {
+        width: 400px;
+      }
+      .footer {
+        background-color: #000;
+        color:#FFF;
+        width: 90%;
+        position: relative;
+        bottom: -10px;
+        margin: auto;
+        padding:50px;
+      }
+      .footer3d {
+        background-image:linear-gradient(#373737, #000);
+        border-bottom:1px #FFF solid;
+        height:50px;
+        width:110%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <div class="logo">
+          <img src="logo.png" style="height: 50px; width: 50px" />
+          <div style="float: right; position: relative; top: 20px">
+            POSTIMAGE
+          </div>
+        </div>
+        <div class="navlist">
+          <a href="#" class="navlink">Home</a>
+          <a href="#" class="navlink">about</a>
+          <a href="#" class="navlink">services</a>
+          <a href="#" class="navlink">contact</a>
+        </div>
+      </div>
+      <div class="body">
+        <div class="content1">
+          <div class="slanted-section">
+            <div class="slanted-section-content">
+              <h1>Welcome to website</h1>
+              <p>
+                I came to dig, dig, dig, dig. I'll build a city oh so big, big,
+                big, big. Just wait a sec gotta kill this pig, pig, pig, pig.
+                Cook me some bacon take a swig, swig, swig, swig. Yeah, yeah.
+                There must be something I can craft. To ease the burden of this
+                task, yeah.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="content2">
+          <div class="content2content">
+            <h2>You Make Me Feel... by Cobra Starship</h2>
+            <p>
+              Girl, I've been all over the world, Looking for you. I'm known for
+              taking what I think I deserve, And you're overdue.
+            </p>
+            <p>
+              And if you listen, you can hear me through the radio, In that
+              bright white noise.
+            </p>
+            <p>
+              What I been missin' in my life, what I been dreamin' of, You'll be
+              that girl, you'll be that girl You'll be
+            </p>
+          </div>
+          <div class="content2bar">
+            <div class="barcontent">
+              <div class="barcolumn">
+                <img src="logo.png" />
+              </div>
+              <div class="barcolumn">
+                <h2>Header 1</h2>
+                <p>deez</p>
+              </div>
+              <div class="barcolumn">
+                <h3>Header 2</h3>
+                <p>nuts</p>
+              </div>
+            </div>
+          </div>
+          <br /><br /><br />
+          <div class="content2bar" style="height:800px;">
+            <div class="barcontent"">
+            <img src="download (8).jpg" style="filter:invert(0);height:800px;width:1600px;">
+            </div>
+          </div>
+          <div class="content2bottom">
+            <h2>Header</h2>
+            <p>
+              Everything you want, so let me get up there I'm the baddest, baby,
+              in the atmosphere
+            </p>
+            <p>
+              Tell me what you want so we can do just what you like (Oh-oh-oh)
+              Everything you know, I flip it upside down
+            </p>
+            <p>Take you around the world, you know I like it loud</p>
+            <p>Tell me what you want, 'cause we can do just what you like</p>
+          </div>
+        </div>
+        <div class="content3">
+          <div class="content3start">
+            <h2>Look tho</h2>
+            <p>look at this artwork haha</p>
+          </div>
+          <div class="content3columns">
+            <div class="content3column">
+              <img src="apple.jpg" />
+            </div>
+            <div class="content3column">
+              <img src="grapes.jpg" />
+            </div>
+            <div class="content3column">
+              <img src="orange.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer3d"></div>
+        <div class="footer-container">
+          <div class="footer-column">
+            <h3>About Us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium elit elit, id aliquam augue viverra id. Nunc at varius urna.</p>
+          </div>
+          <div class="footer-column">
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p>123 Main Street<br>Anytown, USA 12345<br>Phone: 555-555-5555<br>Email: info@example.com</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 My Website. All rights reserved.</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
