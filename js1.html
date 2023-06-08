@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="night.css" />
+    <link rel="stylesheet" href="day.css" />
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <div class="logo">
+          <a href="index.html"><img src="logoSmall.png"/></a>
+        </div>
+        <div class="mobile-menu">
+          <button class="menu-toggle">&#9776;</button>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="#">About</a>
+          <a href="js1.html">Projects</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+      <div class="menu-items">
+        <div class="menu-slides"><a href="index.html">Home</a></div>
+        <div class="menu-slides"><a href="#">About</a></div>
+        <div class="menu-slides"><a href="js1.html">Projects</a></div>
+        <div class="menu-slides"><a href="#">Contact</a></div>
+      </div>
+      <main>
+        <div class="firstmain">
+          <div class="left-column">
+            <div class="leftbox">
+              <h1>Script 1.</h1>
+              <button id="night-mode-btn">Toggle Night Mode</button>
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="box-container">
+              <div class="rightbox">
+                <h2>circle physics.</h2>
+                <p>
+                  This script blablablablabldawbjldwanlkjdnaoltrk4je
+                </p>
+                <p>simple acceleration, gravity, elastic physics.</p>
+                <img src="logo.png" style="height: 100px" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="thirdmain2">
+          <div class="thirdmainbuttons prev2">
+            Prev
+          </div>
+          <div class="thirdmaincanvasHolder">
+            <canvas id="canvas" width="800" height="800" style="border: solid">
+            </canvas>
+          </div>
+
+          <div class="thirdmainbuttons next2">
+            Next
+          </div>
+        </div>
+      </main>
+    </main>
+
+      <footer>
+        <p>&copy; 2023 website</p>
+      </footer>
+    </div>
+    <script src="game1.js" id="game-script"></script>
+    <script src="mode.js"></script>
+    <script src="mobile.js"></script>
+  </body>
+</html>

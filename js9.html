@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="night.css" />
+    <link rel="stylesheet" href="day.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <a href="index.html"><img src="logo.png" style="height: 100%" /></a>
+        </div>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="firstmain">
+          <div class="left-column">
+            <div class="leftbox">
+              <h1>Script 1.</h1>
+              <button id="night-mode-btn">Toggle Night Mode</button>
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="box-container">
+              <div class="rightbox">
+                <h2>circle physics.</h2>
+                <p>
+                  This script blablablablabldawbjldwanlkjdnaoltrk4je
+                </p>
+                <p>simple acceleration, gravity, elastic physics.</p>
+                <img src="logo.png" style="height: 100px" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <label for="maxPixels">Max Pixels:</label>
+        <input type="range" id="maxPoints" min="5" max="2000" step="5" value="5">
+        <input type="range" id="pointQuality" min="1" max="200" step="1" value="1">
+        <br>
+
+        <div class="thirdmain2">
+          <div class="thirdmainbuttons prev2">
+            Prev
+          </div>
+          <div class="thirdmaincanvasHolder">
+            <canvas id="canvas" width="800" height="800" style="border: solid">
+            </canvas>
+          </div>
+
+          <div class="thirdmainbuttons next2">
+            Next
+          </div>
+        </div>
+      </main>
+    </main>
+
+      <footer>
+        <p>&copy; 2023 website</p>
+      </footer>
+    </div>
+    <script src="game9.js" id="game-script"></script>
+    <script>
+      const nightModeBtn = document.getElementById("night-mode-btn");
+      nightModeBtn.addEventListener("click", function () {
+        const dayModeCSS = document.querySelector('link[href="day.css"]');
+        const nightModeCSS = document.querySelector('link[href="night.css"]');
+
+
+        if (dayModeCSS.disabled) {
+          dayModeCSS.disabled = false;
+          nightModeCSS.disabled = true;
+        } else {
+          dayModeCSS.disabled = true;
+          nightModeCSS.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>

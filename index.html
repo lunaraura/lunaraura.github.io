@@ -1,325 +1,176 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      /* Global styles */
-      body {
-        background-color: #373737;
-        overflow-x: hidden;
-        font-size: larger;
-      }
-
-      /* Header */
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        top: -10px;
-        left: -5%;
-        width: 110%;
-        height: 75px;
-        padding: 10px 5%;
-        background-color: #fff;
-        overflow: hidden;
-      }
-
-      .logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 200px;
-        height: 50px;
-        text-align: center;
-      }
-
-      .navlist {
-        display: flex;
-        justify-content: right;
-        align-items: center;
-        height: 130%;
-        width: 50%;
-        margin-right: 10%;
-        overflow: hidden;
-      }
-
-      .navlink {
-        padding: 10px 20px;
-        margin-right: 40px;
-        color: #333;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      /* Body */
-      .body {
-        position: relative;
-        left: -10px;
-        width: 100%;
-        margin: 10px auto;
-        padding: 10px;
-        overflow: hidden;
-      }
-
-      /* Content 1 */
-      .content1 {
-        width: 110%;
-        height: 800px;
-        margin: 20px -10px;
-        text-align: center;
-        background-image: url("image (3).webp");
-        background-position-y: -100px;
-      }
-
-      .slanted-section {
-        position: relative;
-        float: right;
-        width: 50%;
-        height: 100%;
-        overflow: hidden;
-        z-index: 8;
-        right: 0px;
-      }
-
-      .slanted-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ffffff;
-        transform-origin: bottom left;
-        transform: skewX(-15deg);
-        z-index: 9;
-        overflow: hidden;
-      }
-
-      .slanted-section-content {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin-right: 20%;
-        z-index: 10;
-        height: 200px;
-        text-align: center;
-      }
-
-      /* Content 2 */
-      .content2 {
-        width: 90%;
-        margin: 50px auto;
-        text-align: center;
-        background-color: #fff;
-        overflow: hidden;
-      }
-
-      .content2banner{
-        position:absolute;
-        right:4px;
-        height:400px;
-        background-image: linear-gradient(#04070d, #04070d, #373737);
-        z-index: -1;
-        width:130%;
-      }
-
-      .content2content {
-        margin: 50px 15% 100px 15%;
-      }
-
-      .content2bar {
-        width: 100%;
-        height: 350px;
-        background-color: #04070d;
-        overflow:hidden;
-      }
-
-      .barcontent {
-        display: flex;
-        justify-content: space-between;
-        overflow:hidden;
-      }
-
-      .barcontent img {
-        width: 300px;
-        float: left;
-        color: #fff;
-        text-align: center;
-        filter: invert(100);
-      }
-
-      .barcontent h1,
-      .barcontent h2,
-      .barcontent h3,
-      .barcontent p {
-        color: #fff;
-        text-align: center;
-      }
-
-      .barcolumn {
-        flex: 1;
-        margin: 10px;
-      }
-      .content2bottom {
-        position: relative;
-        top: 10px;
-        margin: 50px 0 100px 0;
-        padding: 20px;
-      }
-      /* Content 4*/
-      .content4{
-        width: 90%;
-        margin: 50px auto;
-        text-align: center;
-        background-color: #fff;
-        overflow: hidden;
-      }
-
-
-      /* Content 3 */
-      .content3 {
-        background-image: linear-gradient(#373737, #fff);
-        width: 90%;
-        height: 800px;
-        margin: 200px auto;
-        text-align: center;
-      }
-      .content3start {
-        background-color: #fff;
-        padding: 30px;
-      }
-      .content3columns {
-        display: flex;
-        justify-content: space-between;
-        padding: 40px;
-        height: auto; 
-      }
-      .content3column {
-        flex: 1;
-        margin: 10px;
-        padding: 20px;
-        background-color: #fff;
-        height:auto;
-      }
-      .content3column img {
-        width: 400px;
-        max-width: 100%;
-        height: auto;
-      }
-      .footer {
-        background-color: #000;
-        color:#FFF;
-        width: 90%;
-        position: relative;
-        bottom: -10px;
-        margin: auto;
-        padding:50px;
-      }
-
-    </style>
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="night.css" />
+    <link rel="stylesheet" href="day.css" />
+    <link rel="stylesheet" href="contact.css" />
   </head>
   <body>
-    <main>
-      <div class="header">
+    <div class="overlay">
+      <div class="image-container"><img alt="Image" id="animated-image" src="logoSmall.png"/></div>
+
+      <h2>Welcome</h2>      <br>
+      <div class="line"></div>
+    </div>
+    <div class="container">
+      <header>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <div class="logo">
-          <img src="logo.png" style="height: 50px; width: 50px" />
-          <div style="float: right; position: relative; top: 20px">
-            POSTIMAGE
-          </div>
+          <a href="index.html"><img src="logoSmall.png"/></a>
         </div>
-        <div class="navlist">
-          <a href="#" class="navlink">Home</a>
-          <a href="#" class="navlink">about</a>
-          <a href="#" class="navlink">services</a>
-          <a href="#" class="navlink">contact</a>
+        <div class="mobile-menu">
+          <button class="menu-toggle">&#9776;</button>
         </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="#">About</a>
+          <a href="js1.html">Projects</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+      <div class="menu-items">
+        <div class="menu-slides"><a href="index.html">Home</a></div>
+        <div class="menu-slides"><a href="#">About</a></div>
+        <div class="menu-slides"><a href="js1.html">Projects</a></div>
+        <div class="menu-slides"><a href="#">Contact</a></div>
       </div>
-      <div class="body">
-        <div class="content1">
-          <div class="slanted-section">
-            <div class="slanted-section-content">
-              <h1>Welcome to the Lexcorp website</h1>
-              <p>
-                I came to dig, dig, dig, dig. I'll build a city oh so big, big,
-                big, big. Just wait a sec gotta kill this pig, pig, pig, pig.
-                Cook me some bacon take a swig, swig, swig, swig. Yeah, yeah.
-                There must be something I can craft. To ease the burden of this
-                task, yeah.
-              </p>
+      <main>
+        <div class="firstmain">
+          <div class="left-column">
+            <div class="leftbox">
+              <h1>Welcome to my website portal!</h1>
+              <button id="night-mode-btn">Toggle Night Mode</button>
             </div>
           </div>
-        </div>
-        <div class="content2">
-          <div class="content2content">
-            <h2>At Lexcorp..</h2>
-            <p>
-              We understand the challenges that businesses face in today's competitive marketplace.
-              That's why we work closely with our clients to develop customized solutions that address their unique needs and goals. From strategic planning and process optimization to technology implementation and ongoing support,
-               we're here to help your business succeed.
-            </p>
-          </div>
-          <div class="content2bar">
-            <div class="content2banner"></div>
-            <div class="barcontent">
-              <div class="barcolumn">
-                <img src="logo.png" />
-              </div>
-              <div class="barcolumn">
-                <h2>Header 1</h2>
-                <p>At Lexcorp, we take pride in delivering innovative solutions that meet the needs of our clients.
-                  Our team of experienced professionals is dedicated to providing exceptional service and support, leveraging the latest technologies to deliver optimal results.</p>
-              </div>
-              <div class="barcolumn">
-                <br><br><br>
-                <p>We are committed to building long-lasting partnerships with our clients, empowering them to achieve their goals and thrive in today's competitive marketplace. With a focus on integrity, transparency, and excellence, Lexcorp is your trusted partner for all your business needs.</p>
+          <div class="right-column">
+            <div class="box-container">
+              <div class="rightbox">
+                <h2>I am name,</h2>
+                <p>UX Designer, Fullstack Developer, avid word, word, and motivated word.</p>
+                <img src="logoSmall.png"/>
               </div>
             </div>
           </div>
         </div>
-        
-        
-        <div class-="content4">
-
-        </div>
-
-
-        <div class="content3">
-          <div class="content3start">
-            <h2>Look tho</h2>
-            <p>look at this artwork haha</p>
-          </div>
-          <div class="content3columns">
-            <div class="content3column">
-              <img src="apple.jpg" />
+        <div class="secondmain">
+          <div class="sndcolumncontainer">
+            <div class="sndcolumn">
+              <h3>As of February of 2023,</h3>
+              <p>I am embarking on an exciting new journey to unleash my potential in the realms of computing technology! 
+                <p>With a strong foundation in electronics and a passion for technology, I am eager to pivot my career towards the field of programming.</p>
             </div>
-            <div class="content3column">
-              <img src="grapes.jpg" />
+            <div class="sndcolumn">
+              <div class="sndcolumnbar"></div>
+              <img id="image" src="c.png" />
+              <canvas
+                id="canvas"
+                class="canvas1"
+                width="300px"
+                height="600px"
+              ></canvas>
             </div>
-            <div class="content3column">
-              <img src="orange.jpg" />
+            <div class="sndcolumn">
+              <h3>Unlocking the Full Potential of Computer Science.</h3>
+              
+              <p>With my strong foundation in frontend development,
+              I am poised to thrive as a Fullstack Developer, just waiting to delve into the many fields that computer science and engineering has to offer!</p>
             </div>
           </div>
         </div>
-      </div>
-      <div class="footer">
-        <div class="footer-container">
-          <div class="footer-column">
-            <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium elit elit, id aliquam augue viverra id. Nunc at varius urna.</p>
-          </div>
-          <div class="footer-column">
-          </div>
-          <div class="footer-column">
-            <h3>Contact Us</h3>
-            <p>123 Main Street<br>Anytown, USA 12345<br>Phone: 555-555-5555<br>Email: info@example.com</p>
+
+        <div class="midbox">
+          <div class="midboxcontent">
+            <h3> Check out my social media!</h3>
+            <div class="midsocialsContainer">
+              <a href="#" class="fa fa-snapchat-ghost overlay-trigger">
+                <div class="overlay">
+                  <img src="snapcodes.svg" alt="Large Image" class="large-image"/>
+                </div> </a>
+              <a href="https://open.spotify.com/user/2lxuuplfvklfffidndxqxolip?si=6a7edb7016374013" class="fa fa-spotify"></a>
+              <a href="https://www.instagram.com/genericlunaraura/" class="fa fa-instagram"></a>
+              <div class="icon-wrapper">
+              <a href="https://soundcloud.com/postimage" class="fa fa-soundcloud"></a>
+              </div>
+              <a
+                href="https://www.linkedin.com/in/juan-harris-montalvo-6bb730265/"
+                class="fa fa-linkedin"
+              ></a>
+            </div>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2023 My Website. All rights reserved.</p>
+        <div class="thirdmain">
+          <div class="thd">
+            <div class="project-view">
+              <h1>projects!</h1>
+              <div class="project-container">
+                <div class="project-box">
+                  <div class="project-info">
+                    Javascript files and such.
+                  </div>
+                  <div class="project-images">
+                    <div class="project-slider">
+                      <a href="js1.html">
+                        <img src="js1.PNG" alt="Image">
+                      </a>
+                    </div>
+                    <div class="project-slider">
+                    </div>
+                    <div class="project-slider">
+                    </div>
+                  </div>
+                </div>
+                <div class="project-box">
+                  <div class="project-info">
+                    other webpages and such.
+                  </div>
+                  <div class="project-images">
+                    <div class="project-slider">
+                    </div>
+                    <div class="project-slider">
+                    </div>
+                  </div>
+                </div>
+                <div class="project-box">
+                  <div class="project-info">
+                    learning notes and such.
+                  </div>
+                  <div class="project-images">
+                    <div class="project-slider">
+                    </div>
+                    <div class="project-slider">
+                    </div>
+                    <div class="project-slider">
+                    </div>
+                    <div class="project-slider">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contact-container">
+              <h3>Contact!</h3>
+              <form class="contact-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>      
+                <button class="form-button" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <footer>
+        <p>&copy; 2023 website</p>
+      </footer>
+    </div>
+    <script src="firstpage.js"></script>
+    <script src="mobile.js"></script>
+    <script src="overlay.js"></script>
   </body>
 </html>
