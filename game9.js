@@ -50,22 +50,29 @@ function spawnCloud(maxPoints, pointQualityValue) {
     points.push(point);
   }
 }
+function collisionDetect(point, box) {
+  return point.x < box.outerRight &&
+         point.x + point.width > box.outerLeft &&
+         point.y < box.outerBottom &&
+         point.y + point.height > box.outerTop;
+}
 function updateVelocity() {
   points.forEach((point, index) => {
     let collisionX = 0;
     let collisionY = 0;
     point.vy += gravity;
-    boxes.forEach((box) => {
-      if (point.x + point.width >= box.innerRight && point.vx > 0) {
-        collisionX = -1.1 * point.vx;
-      } else if (point.x <= box.innerLeft && point.vx < 0) {
-        collisionX = -1.1 * point.vx;
-      } else if (point.y + point.height >= box.innerBottom && point.vy > 0) {
-        collisionY = -1.1 * point.vy;
-      } else if (point.y <= box.innerTop && point.vy < 0) {
-        collisionY = -1.1 * point.vy;
-      }
-    });
+boxes.forEach((box) => {
+  if (collisionDetect(point, box)) {
+    if (point.x + point.width > box.outerRight && point.vx > 0 || 
+        point.x < box.outerLeft && point.vx < 0) {
+      collisionX = -1.1 * point.vx;
+    }
+    if (point.y + point.height > box.outerBottom && point.vy > 0 || 
+        point.y < box.outerTop && point.vy < 0) {
+      collisionY = -1.1 * point.vy;
+    }
+  }
+});
     for (let i = 0; i < points.length; i++) {
       if (i !== index) {
         const otherPoint = points[i];
@@ -81,21 +88,23 @@ function updateVelocity() {
         }
       }
     }
-    point.vx += collisionX;
-    point.vy += collisionY;
     point.x += point.vx;
     point.y += point.vy;
-    if (point.x < -1){
-      point.x = canvas.width - 1;
+    
+    if (point.x + point.width > canvas.width) {
+        point.vx = -0.5 * Math.abs(point.vx);
+        point.x = canvas.width - point.width;
+    } else if (point.x < 0) {
+        point.vx = 0.5 * Math.abs(point.vx);
+        point.x = 0;
     }
-    if (point.x > (canvas.width + 1)){
-      point.x = 0;
-    }
-    if (point.y < 0){
-      point.y =  1;
-    }
-    if (point.y > (canvas.height + 1)){
-      point.y = canvas.height;
+    
+    if (point.y + point.height > canvas.height) {
+        point.vy = -0.5 * Math.abs(point.vy);
+        point.y = canvas.height - point.height;
+    } else if (point.y < 0) {
+        point.vy = 0.5 * Math.abs(point.vy);
+        point.y = 0;
     }
   });
 }

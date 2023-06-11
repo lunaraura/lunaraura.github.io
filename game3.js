@@ -30,9 +30,9 @@ function spawnPixels(maxPixels, minDistance) {
         vy: 0,
         ax: 0,
         ay: 0,
-        width: 1,
-        height: 1,
-        mass: Math.random() + 50,
+        width: 2,
+        height: 2,
+        mass: Math.random() * 500,
       };
     } while (
       pixels.some(

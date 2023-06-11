@@ -1,19 +1,21 @@
-const nightModeBtn = document.getElementById("night-mode-btn");
-const image = document.getElementById("image");
-const originalImageSrc = image.src;
-const nightModeImageSrc = "xz.png";
-const scriptElement = document.getElementById("lines-script");
-let currentScript = script2;
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
+(function () {
+  const nightModeBtn = document.getElementById("night-mode-btn");
+  const image = document.getElementById("image");
+  const originalImageSrc = image.src;
+  const nightModeImageSrc = "xz.png";
+  const scriptElement = document.getElementById("lines-script");
+  let currentScript = script2;
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
 
-const overlayTriggers = document.querySelectorAll(".overlay-trigger");
+  const overlayTriggers = document.querySelectorAll(".overlay-trigger");
 
-overlayTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", () => {
-    trigger.classList.toggle("open");
+  overlayTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      trigger.classList.toggle("open");
+    });
   });
-});
+
 //rando color lines
 function script1() {
   let lines = [];
@@ -199,7 +201,7 @@ function script2() {
   requestAnimationFrame(animate);
 }
 
-nightModeBtn.addEventListener("click", function () {
+function toggleNightMode() {
   const dayModeCSS = document.querySelector('link[href="day.css"]');
   const nightModeCSS = document.querySelector('link[href="night.css"]');
 
@@ -208,21 +210,22 @@ nightModeBtn.addEventListener("click", function () {
     nightModeCSS.disabled = true;
     image.src = originalImageSrc;
     currentScript = script2;
-    localStorage.setItem('toggleState', 'on');
+    localStorage.setItem("toggleState", "on");
   } else {
     dayModeCSS.disabled = true;
     nightModeCSS.disabled = false;
     image.src = nightModeImageSrc;
     currentScript = script1;
-    localStorage.setItem('toggleState', 'off');
+    localStorage.setItem("toggleState", "off");
   }
 
   currentScript();
-});
-document.addEventListener("DOMContentLoaded", function() {
-  var toggleState = localStorage.getItem('toggleState');
+}
 
-  if (toggleState === 'on') {
+function initializePage() {
+  var toggleState = localStorage.getItem("toggleState");
+
+  if (toggleState === "on") {
     const dayModeCSS = document.querySelector('link[href="day.css"]');
     const nightModeCSS = document.querySelector('link[href="night.css"]');
     dayModeCSS.disabled = false;
@@ -239,5 +242,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   currentScript();
-});
-currentScript();
+}
+
+nightModeBtn.addEventListener("click", toggleNightMode);
+document.addEventListener("DOMContentLoaded", initializePage);
+})();

@@ -3,20 +3,6 @@ nightModeBtn.addEventListener("click", function () {
   const dayModeCSS = document.querySelector('link[href="day.css"]');
   const nightModeCSS = document.querySelector('link[href="night.css"]');
 
-  // Toggle between the CSS files
-  if (dayModeCSS.disabled) {
-    dayModeCSS.disabled = false;
-    nightModeCSS.disabled = true;
-  } else {
-    dayModeCSS.disabled = true;
-    nightModeCSS.disabled = false;
-  }
-});
-
-nightModeBtn.addEventListener("click", function () {
-  const dayModeCSS = document.querySelector('link[href="day.css"]');
-  const nightModeCSS = document.querySelector('link[href="night.css"]');
-
   if (dayModeCSS.disabled) {
     dayModeCSS.disabled = false;
     nightModeCSS.disabled = true;
@@ -26,12 +12,9 @@ nightModeBtn.addEventListener("click", function () {
     nightModeCSS.disabled = false;
     localStorage.setItem('toggleState', 'off');
   }
-
-  currentScript();
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-
   var toggleState = localStorage.getItem('toggleState');
 
   if (toggleState === 'on') {

@@ -135,6 +135,15 @@ nav a:hover {
   color: #fff;
 }
 
+.fa.fa-snapchat-ghost .overlay2 {
+  filter:invert(0%);
+}
+
+.overlay-trigger2.open .overlay {
+  opacity: 1;
+  filter:invert(0%);
+}
+
 /* THIRD */
 
 .thirdmain {
@@ -173,12 +182,21 @@ nav a:hover {
 
 .thirdmainbuttons {
   background-color: #fff9;
+
 }
 
 .thirdmain2 canvas {
-  border: 1px solid #000;
+  border: 1px solid #FFF;
+  background-color: #FFF;
+  filter:invert(100%);
 }
-
+.linkwhite {
+  color:#ADF;
+}
+.buttonholder2 {
+  background-color: #333;
+  border:1px solid #cfc;
+}
 /* Contact */
 
 .contact-container {
