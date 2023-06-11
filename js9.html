@@ -43,9 +43,9 @@
               <div class="rightbox">
                 <h2>2D circle physics: No gravity.</h2>
                 <p>
-                  This script represents a ball with a top-down view with the
-                  principles being acceleration and elastic physics against a wall.</p>
-                  <p>A grid collision detection should be implemented here too.</p>
+                  This script is a "mesh" or point cloud simulation that represents water.
+                  The points repel each other to represent a side view of water..</p>
+                  <p>A grid collision detection should be implemented here too since "water" keeps leaking out through the corners.</p>
                   <img src="logoSmall.png"/>
               </div>
             </div>
@@ -62,6 +62,7 @@
       <div class="sndcolumn">
         <label for="maxPixels">Max Pixels:</label>
         <input type="range" id="maxPoints" min="5" max="2000" step="5" value="5">
+        <label for="pointQuality">Repulsion Factor:</label>
         <input type="range" id="pointQuality" min="1" max="200" step="1" value="1">
       </div>
         <div class="thirdmain2">
