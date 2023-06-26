@@ -519,8 +519,10 @@ span:hover {
 .thirdmainbuttons {
   height: 45px;
   justify-content: space-around;
-  padding: 5px;
+  padding: 6px 20px;
   font-size: 24px;
+  text-decoration:none;
+  letter-spacing:1px;
 }
 
 .prev2 {
