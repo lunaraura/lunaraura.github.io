@@ -45,7 +45,6 @@ body {
 }
 .line {
   text-align: center;
-
   width: 50%;
   position: absolute;
   top: 60%;
@@ -123,7 +122,6 @@ nav a:hover {
 .mobile-menu {
   display: none;
 }
-
 .menu-toggle {
   display: none;
 }
@@ -134,37 +132,36 @@ nav a:hover {
 .menu-slides{
   display: none;
 }
+select {
+  width:100px;
+  height:50px;
+}
 .firstmain {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 40px;
 }
-
 .left-column {
   width: 40%;
   margin: 10px 5%;
   justify-content: center;
 }
-
 .left-column h1 {
   font-size: 40px;
   margin-bottom: 20px;
   text-align: center;
 }
-
 .leftbox {
   padding: 10px;
   text-align: center;
 }
-
 .leftbox button {
   padding: 20px;
   font-size: 24px;
   text-align: center;
   border-radius: 0 0 20px 20px;
 }
-
 .right-column {
   width: 55%;
   padding-left: 40px;
@@ -182,18 +179,15 @@ span:hover {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 .rightbox {
   height: 400px;
   width: 90%;
   padding: 10px;
   text-align: center;
 }
-
 .rightbox h2 {
   margin-top: 60px;
 }
-
 .rightbox p {
   margin-top: 20px;
 }
@@ -201,13 +195,11 @@ span:hover {
   width:100px;
 }
 /* Part 2 */
-
 .secondmain {
   margin: 20px 0 0 0;
   height: 600px;
   overflow: hidden;
 }
-
 .sndcolumncontainer {
   margin: 20px;
   height: 93%;
@@ -217,7 +209,6 @@ span:hover {
   z-index: 1;
   justify-content: space-around;
 }
-
 .sndcolumn {
   width: 30%;
   height: 100%;
@@ -620,7 +611,18 @@ textarea {
   border-radius: 4px;
   cursor: pointer;
 }
+/* FOURTH */
 
+.fourth-main {
+  height: auto;
+  padding: 25px;
+  margin:10px 0;
+}
+
+.fourth {
+  flex-wrap: wrap;
+  padding: 50px;
+}
 /* FOOTER */
 
 footer {
@@ -644,7 +646,6 @@ footer {
   .menu-items {
     display: none;
     flex-direction: column;
-    background-color: white;
     padding: 10px;
   }
   .menu-slides{
@@ -653,6 +654,7 @@ footer {
     flex-grow: 1;
     height:70px;
     overflow:hidden;
+
   }
   .menu-items a {
     position:relative;

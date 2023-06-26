@@ -221,6 +221,13 @@ textarea {
   background-color: #003303;
 }
 
+/* fourth*/
+.fourth{
+border-top: 1px solid #333;
+border-bottom: 1px solid #444;
+background-color: #222;
+}
+
 /* FOOTER */
 
 footer {
@@ -231,5 +238,19 @@ footer {
 @media (max-width: 1000px) {
   .sndcolumn img {
     filter: drop-shadow(-10px 20px 2px #0000);
+  }
+  .menu-items {
+    background-color: #333;
+  }
+  .mobile-menu {
+    color:#fff;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  .menu-slides {
+    border-bottom: 1px solid #ccc;
+  }
+  .menu-slides a {
+    color:#fff;
   }
 }

@@ -210,6 +210,14 @@ textarea {
   background-color: #003366;
 }
 
+/* */
+.fourth {
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #e6e6e6;
+  background-color: #fff;
+}
+
+
 /* FOOTER */
 footer {
   background-color: #333;
@@ -219,5 +227,17 @@ footer {
 @media (max-width: 1000px) {
   .sndcolumn img {
     filter: drop-shadow(-10px 20px 2px #0000);
+  }
+  .menu-items {
+    background-color: #eee;
+  }
+  .menu-slides {
+    border-bottom: 1px solid #333;
+  }
+  .menu-slides a {
+    color:#000;
+  }
+  .menu-slides a:hover {
+    color:#f00;
   }
 }
