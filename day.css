@@ -168,7 +168,8 @@ nav a:hover {
 }
 
 .thirdmainbuttons {
-  background-color: #aaa9;
+  background-color: #daa9;
+  border: 1px solid #faf;
 }
 
 .thirdmaincanvasHolder {
