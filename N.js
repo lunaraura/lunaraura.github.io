@@ -71,6 +71,9 @@ class Camera {
         this.far = far;
         this.cameraPosition = [this.x, this.y, this.z];
         this.cameraTarget = [this.lX, this.lY, this.lZ];
+        this.forward = [0, 0, -1]; // Initial forward direction
+        this.up = [0, 1, 0];       // Initial up direction
+        this.right = [1, 0, 0];    // Initial right direction
         this.cameraUp = [0, 1, 0];
         this.projectionMatrix = [
             [1 / (this.aspect * Math.tan(this.fov / 2)), 0, 0, 0],
@@ -93,6 +96,15 @@ class Camera {
         ];
     }
     //good
+    updateProjectionMatrix() {
+        const fovRad = 1 / Math.tan(this.fov / 2);
+        return [
+            [fovRad / this.aspect, 0, 0, 0],
+            [0, fovRad, 0, 0],
+            [0, 0, (this.far + this.near) / (this.near - this.far), (2 * this.far * this.near) / (this.near - this.far)],
+            [0, 0, -1, 0]
+        ];
+    }
     project(vertex) {
         const point = [[vertex.x], [vertex.y], [vertex.z], [1]];
         const projected = multiplyMatrices(this.cameraMatrix, point);
@@ -137,14 +149,16 @@ class Camera {
             [0, 0, 0, 1],
         ];
         
-        this.centerMatrix = multiplyMatrices(translate, multiplyMatrices(rotY, multiplyMatrices(rotX, rotZ)));
+        this.centerMatrix = multiplyMatrices(translate, multiplyMatrices(rotY, multiplyMatrices(rotZ, rotX)));
+        let rotMatrix = multiplyMatrices(rotY, multiplyMatrices(rotZ, rotX));
     
         let direction =  multiplyMatrices(this.centerMatrix, [[0],[0],[1],[0]]);
         let distance = 1;
 
         this.cameraPosition = [this.centerMatrix[0][3], this.centerMatrix[1][3], this.centerMatrix[2][3]]
         this.cameraTarget = [this.cameraPosition[0] + direction[0] * distance, this.cameraPosition[1] + direction[1] * distance, this.cameraPosition[2] + direction[2] * distance];
-        this.cameraUp = [0, 1, 0]
+        let camUp = multiplyMatrices(rotMatrix, [[0],[-1],[0],[1]])
+        this.cameraUp = [camUp[0], camUp[1], camUp[2]];
         const lookAtMatrix = this.lookAt(this.cameraPosition, this.cameraTarget, this.cameraUp);
         this.viewMatrix = lookAtMatrix;
         this.cameraMatrix = multiplyMatrices(this.projectionMatrix, this.viewMatrix);
@@ -155,9 +169,9 @@ class Camera {
         this.x += this.velocityX;
         this.y += this.velocityY;
         this.z += this.velocityZ;
-        this.velocityX *= 0.8;
-        this.velocityY *= 0.8;
-        this.velocityZ *= 0.8;
+        this.velocityX *= 0.9;
+        this.velocityY *= 0.9;
+        this.velocityZ *= 0.9;
         this.updateCameraMatrix()
 
 
@@ -167,30 +181,30 @@ class Camera {
     }
 }
 let chunkNumber = 4;
-let chunkGrid = 1;
-let blocksInChunk = 50;
-let chunkGridSize = 8;
+let chunkGrid = 2;
+let blocksInChunk = 30;
+let chunkGridSize = 2;
 let chunkList = [];
 let camera = new Camera(0, 0, 0, 0, 0, 3.14 / 1.5, canvas.width/canvas.height, 1, 2000)
 document.addEventListener("keydown", (event) => {
     switch(event.key){
         case "e":
-            camera.velocityY += 1;
+            camera.velocityY += .1;
             break;
         case "q":
-            camera.velocityY += -1;
+            camera.velocityY += -.1;
             break;
         case "a":
-            camera.velocityX += 1;
+            camera.velocityX += .1;
             break;
         case "d":
-            camera.velocityX += -1;
+            camera.velocityX += -.1;
             break;
         case "w":
-            camera.velocityZ += 1;
+            camera.velocityZ += .1;
             break;
         case "s":
-            camera.velocityZ += -1;
+            camera.velocityZ += -.1;
             break;
         case "t":
             camera.angleZ += .034;
@@ -270,11 +284,9 @@ function animate() {
     });
 
     ctx.stroke();
+    requestAnimationFrame(animate)
 }
-
-setInterval(animate, 30)
-
-
+animate()
 
 
 function normalize (vector){
